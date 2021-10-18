@@ -46,6 +46,8 @@ type CovidCases struct {
 func Storedata(c echo.Context) error {
 	dbname := c.QueryParam("db")
 	colname := c.QueryParam("col")
+
+	// Consuming the rest another rest api for getting the statewise covid casesS
 	response, err := http.Get("https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise")
 	if err != nil {
 		fmt.Print(err.Error())
