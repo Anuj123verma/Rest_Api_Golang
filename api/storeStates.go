@@ -43,7 +43,7 @@ type CovidCases struct {
 	LastOriginUpdate time.Time `json:"lastOriginUpdate"`
 }
 
-func storeData(c echo.Context) error {
+func Storedata(c echo.Context) error {
 	dbname := c.QueryParam("db")
 	colname := c.QueryParam("col")
 	response, err := http.Get("https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise")
