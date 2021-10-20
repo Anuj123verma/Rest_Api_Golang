@@ -1,4 +1,4 @@
-# Covid Information Stroing API
+# Covid Information Storing API
 
 ## Prerequisites
 * Docker
