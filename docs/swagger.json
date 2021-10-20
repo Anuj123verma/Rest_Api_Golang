@@ -1,0 +1,78 @@
+{
+    "schemes": [
+        "http"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a server that can give store the covid related information in mongodb database.",
+        "title": "Swagger Covid Information Storing In MongoDb API",
+        "contact": {
+            "name": "Anuj Verma",
+            "email": "anujssooni360@gmail.con"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8001",
+    "basePath": "/",
+    "paths": {
+        "/store": {
+            "get": {
+                "description": "Database name and Collection name as input and create it in mongodb local.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Information Storage"
+                ],
+                "summary": "Store the covid related information about the state in mongodb",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Database Name",
+                        "name": "db",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Collection Name",
+                        "name": "collection",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/entity.Success"
+                        }
+                    },
+                    "500": {
+                        "description": "error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "entity.Success": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}

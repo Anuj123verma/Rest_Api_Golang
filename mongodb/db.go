@@ -17,6 +17,7 @@ const (
 )
 
 func Createdb(states entity.CovidCases, dbname string, collectionname string) {
+	// creating the mongo client and opening the connection
 	client, err := mongo.NewClient(options.Client().ApplyURI(Connection))
 	if err != nil {
 		log.Fatal(err)
@@ -31,7 +32,6 @@ func Createdb(states entity.CovidCases, dbname string, collectionname string) {
 	db := client.Database(dbname)
 	// creating the collection
 	collection := db.Collection(collectionname)
-	fmt.Println(len(states.Data.Statewise))
 	for i := 0; i < len(states.Data.Statewise); i++ {
 		// adding all the state in the mongodb
 		res, err := collection.InsertOne(context.Background(), states.Data.Statewise[i])

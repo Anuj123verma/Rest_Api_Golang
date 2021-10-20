@@ -1,0 +1,54 @@
+basePath: /
+definitions:
+  entity.Success:
+    properties:
+      success:
+        type: string
+    type: object
+host: localhost:8001
+info:
+  contact:
+    email: anujssooni360@gmail.con
+    name: Anuj Verma
+  description: This is a server that can give store the covid related information
+    in mongodb database.
+  title: Swagger Covid Information Storing In MongoDb API
+  version: "1.0"
+paths:
+  /store:
+    get:
+      description: Database name and Collection name as input and create it in mongodb
+        local.
+      parameters:
+      - description: Database Name
+        in: query
+        name: db
+        required: true
+        type: string
+      - description: Collection Name
+        in: query
+        name: collection
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.Success'
+        "500":
+          description: error
+          schema:
+            type: string
+      summary: Store the covid related information about the state in mongodb
+      tags:
+      - Information Storage
+schemes:
+- http
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
