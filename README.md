@@ -1,8 +1,8 @@
 # Rest_Api_Golang
 
 ## Prerequisites
-> Docker
-> Mongo Compass
+* Docker
+* Mongo Compass
 
 ## Instructions
 * Use the **docker** to start the **mongodb** in detached mode on port 27017.
@@ -13,7 +13,7 @@ docker run --name goweb-mongo -d -p 27017:27017 mongo
 
 ## Running Instructions
 * QueyParameters
-    * db -- name the database 
+    * db -- database name
     * collection -- collection name 
 * Type the URL on your browser
     * **http://localhost:8001/state?db=""&collection=""**
