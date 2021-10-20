@@ -1,4 +1,4 @@
-# Rest_Api_Golang
+# Covid Information Stroing API
 
 ## Prerequisites
 * Docker
