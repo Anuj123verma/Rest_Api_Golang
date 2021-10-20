@@ -18,6 +18,8 @@ docker run --name goweb-mongo -d -p 27017:27017 mongo
 * Type the URL on your browser
     * **http://localhost:8001/store?db=""&collection=""**
     * Fill the empty strings to store the data
+* For Swagger UI
+    * **http://localhost:8001/swagger/index.html**
 
 
 
