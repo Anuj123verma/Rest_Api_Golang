@@ -15,6 +15,9 @@ docker run --name goweb-mongo -d -p 27017:27017 mongo
 * QueyParameters
     * db -- database name
     * collection -- collection name 
+* Port
+   * 8001 -- you can change it in **main.go**
+* Run **"main.go"** to up the server
 * Type the URL on your browser
     * **http://localhost:8001/store?db=""&collection=""**
     * Fill the empty strings to store the data
